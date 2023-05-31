@@ -2,6 +2,8 @@ package com.api.MeAdote.domain.model.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import java.util.Arrays;
+
 public enum Especie {
 
     GATO("gato"),
@@ -21,15 +23,16 @@ public enum Especie {
     @JsonCreator
     public static Especie getEspecieFromCode(String value) {
 
-        for (Especie pet : Especie.values()) {
+        for (Especie pet : values()) {
 
-            if (pet.getPetCode().equals(value)) {
+            if (pet.getPetCode().equalsIgnoreCase(value)) {
 
                 return pet;
             }
         }
 
-        return null;
+        throw new IllegalArgumentException(
+                "Unknown enum type " + value + ", Allowed values are " + Arrays.toString(values()));
     }
 
 }

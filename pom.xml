@@ -15,8 +15,18 @@
 	<description>Projeto crud para adoção de animais</description>
 	<properties>
 		<java.version>17</java.version>
+		<aws.java.sdk.version>2.20.74</aws.java.sdk.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>bom</artifactId>
+			<version>${aws.java.sdk.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -43,6 +53,13 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
 
 
 	</dependencies>

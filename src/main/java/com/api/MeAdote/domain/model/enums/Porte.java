@@ -2,6 +2,7 @@ package com.api.MeAdote.domain.model.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public enum Porte {
@@ -33,7 +34,8 @@ public enum Porte {
             }
         }
 
-        return null;
+        throw new IllegalArgumentException(
+                "Unknown enum type " + value + ", Allowed values are " + Arrays.toString(values()));
     }
 
 }

@@ -2,6 +2,8 @@ package com.api.MeAdote.domain.model.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import java.util.Arrays;
+
 public enum FaixaEtaria {
 
     ADULTO("adulto"),
@@ -30,6 +32,7 @@ public enum FaixaEtaria {
             }
         }
 
-        return null;
+        throw new IllegalArgumentException(
+                "Unknown enum type " + value + ", Allowed values are " + Arrays.toString(values()));
     }
 }
